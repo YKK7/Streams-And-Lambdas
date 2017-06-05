@@ -8,6 +8,8 @@ import org.junit.Test;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import static org.junit.Assert.assertEquals;
+
 /**
  * Created by leon on 5/31/17.
  * @ATTENTION_TO_STUDENTS You are FORBIDDEN from modifying this class
@@ -28,7 +30,7 @@ public class TestPersonWarehouse {
 
         int actualEndSize = PersonWarehouse.getPeople().size();
 
-        Assert.assertEquals(expectedEndSize, actualEndSize);
+        assertEquals(expectedEndSize, actualEndSize);
     }
 
     @Test
@@ -43,7 +45,28 @@ public class TestPersonWarehouse {
             }
         }
 
-        Assert.assertEquals(uniqueNames.size(), uniquelyNamedPeople.size());
+        assertEquals(uniqueNames.size(), uniquelyNamedPeople.size());
+    }
+
+    @Test
+    public void slightlyBetterGetUniquelyNamedPeopleTest(){
+        //Given
+        PersonWarehouse.addPerson(new Person("Leon", 24, true, 123, new Date()));
+        PersonWarehouse.addPerson(new Person("Leon", 42, false, 456, new Date()));
+
+        //When
+        List<Person> uniquelyNamedPeople = PersonWarehouse.getUniquelyNamedPeople().collect(Collectors.toList());
+        List<String> uniqueNames = new ArrayList<>();
+        for (Person person : PersonWarehouse.getPeople()) {
+            String personName = person.getName();
+            boolean isUnique = !uniqueNames.contains(personName);
+            if (isUnique) {
+                uniqueNames.add(personName);
+            }
+        }
+
+        //Then
+        assertEquals(uniqueNames.size(), uniquelyNamedPeople.size());
     }
 
     @Test
@@ -92,6 +115,6 @@ public class TestPersonWarehouse {
         for (Person person : PersonWarehouse.getPeople()) {
             localNames.add(person.getName());
         }
-        Assert.assertEquals(localNames.size(), warehouseNames.size());
+        assertEquals(localNames.size(), warehouseNames.size());
     }
 }

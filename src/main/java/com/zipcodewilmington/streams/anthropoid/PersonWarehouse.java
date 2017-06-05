@@ -7,7 +7,9 @@ import com.zipcodewilmington.streams.tools.logging.LoggerWarehouse;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 /**
@@ -25,7 +27,7 @@ public final class PersonWarehouse {
      * @ATTENTION_TO_STUDENTS You are FORBIDDEN from modifying this method
      */
     public static void addPerson(Person person) {
-        loggerHandler.disbalePrinting();
+        loggerHandler.disablePrinting();
         loggerHandler.info("Registering a new person object to the person warehouse...");
         loggerHandler.info(ReflectionUtils.getFieldMap(person).toString());
         people.add(person);
@@ -35,7 +37,13 @@ public final class PersonWarehouse {
      * @return list of uniquely named Person objects
      */ //TODO
     public static Stream<Person> getUniquelyNamedPeople() {
-        return null;
+        return people.stream().filter(distinctByKey(p -> p.getName()));
+    }
+
+    //courtesy of https://stackoverflow.com/a/27872852
+    private static <T> Predicate<T> distinctByKey(Function<? super T, ?> keyExtractor) {
+        Map<Object,Boolean> seen = new ConcurrentHashMap<>();
+        return t -> seen.putIfAbsent(keyExtractor.apply(t), Boolean.TRUE) == null;
     }
 
 
@@ -44,7 +52,7 @@ public final class PersonWarehouse {
      * @return a Stream of respective
      */ //TODO
     public static Stream<Person> getUniquelyNamedPeopleStartingWith(Character character) {
-        return null;
+        return getUniquelyNamedPeople().filter(p -> p.getName().charAt(0) == character);
     }
 
     /**
