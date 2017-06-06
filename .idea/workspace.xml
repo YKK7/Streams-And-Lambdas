@@ -21,20 +21,16 @@
       <file leaf-file-name="StreamFilter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/zipcodewilmington/streams/StreamFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="56" column="37" lean-forward="true" selection-start-line="56" selection-start-column="37" selection-end-line="56" selection-end-column="37" />
+            <state relative-caret-position="289">
+              <caret line="79" column="35" lean-forward="true" selection-start-line="79" selection-start-column="35" selection-end-line="79" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#625#626#0" expanded="true" />
-                <element signature="e#714#715#0" expanded="true" />
-                <element signature="e#1165#1166#0" expanded="true" />
-                <element signature="e#1221#1222#0" expanded="true" />
-                <element signature="e#2109#2110#0" expanded="true" />
-                <element signature="e#2136#2137#0" expanded="true" />
-                <element signature="e#2325#2326#0" expanded="true" />
-                <element signature="e#2352#2353#0" expanded="true" />
-                <element signature="e#2545#2546#0" expanded="true" />
-                <element signature="e#2572#2573#0" expanded="true" />
+                <element signature="e#688#689#0" expanded="true" />
+                <element signature="e#777#778#0" expanded="true" />
+                <element signature="e#1228#1229#0" expanded="true" />
+                <element signature="e#1284#1285#0" expanded="true" />
+                <element signature="e#2868#2869#0" expanded="true" />
+                <element signature="e#2895#2896#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -67,7 +63,7 @@
       <file leaf-file-name="PersonFactory.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/zipcodewilmington/streams/anthropoid/PersonFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-71">
+            <state relative-caret-position="-139">
               <caret line="25" column="51" lean-forward="true" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
               <folding />
             </state>
@@ -917,22 +913,13 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1496706351126</updated>
-      <workItem from="1496706352579" duration="3903000" />
+      <workItem from="1496706352579" duration="5234000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestPersonWarehouse - 2017.06.05 at 19h 52m 25s.xml">
-      <configuration name="TestPersonWarehouse" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="TestPersonWarehouse - 2017.06.05 at 20h 10m 30s.xml">
       <configuration name="TestPersonWarehouse" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestPersonWarehouse_testGetFirstNUniquelyNamedPeople - 2017.06.05 at 19h 59m 38s.xml">
-      <configuration name="TestPersonWarehouse.testGetFirstNUniquelyNamedPeople" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestPersonWarehouse_testGetIdToNameMap - 2017.06.05 at 20h 10m 22s.xml">
-      <configuration name="TestPersonWarehouse.testGetIdToNameMap" configurationId="JUnit" />
     </history-entry>
     <history-entry file="TestPersonWarehouse_testGetNames - 2017.06.05 at 20h 17m 50s.xml">
       <configuration name="TestPersonWarehouse.testGetNames" configurationId="JUnit" />
@@ -946,9 +933,24 @@
     <history-entry file="TestStreamFilter - 2017.06.05 at 21h 32m 08s.xml">
       <configuration name="TestStreamFilter" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="TestStreamFilter - 2017.06.05 at 21h 38m 31s.xml">
+      <configuration name="TestStreamFilter" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestStreamFilter - 2017.06.05 at 21h 45m 17s.xml">
+      <configuration name="TestStreamFilter" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestStreamFilter - 2017.06.05 at 21h 46m 20s.xml">
+      <configuration name="TestStreamFilter" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestStreamFilter - 2017.06.05 at 21h 49m 23s.xml">
+      <configuration name="TestStreamFilter" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestStreamFilter - 2017.06.05 at 21h 54m 44s.xml">
+      <configuration name="TestStreamFilter" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3903000" />
+    <option name="totallyTimeSpent" value="5234000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="649" y="-1058" width="1920" height="1058" extended-state="6" />
@@ -1076,14 +1078,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zipcodewilmington/streams/anthropoid/PersonFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-71">
-          <caret line="25" column="51" lean-forward="true" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zipcodewilmington/streams/tools/StringUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
@@ -1114,22 +1108,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zipcodewilmington/streams/anthropoid/PersonFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-139">
+          <caret line="25" column="51" lean-forward="true" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zipcodewilmington/streams/StreamFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="56" column="37" lean-forward="true" selection-start-line="56" selection-start-column="37" selection-end-line="56" selection-end-column="37" />
+        <state relative-caret-position="289">
+          <caret line="79" column="35" lean-forward="true" selection-start-line="79" selection-start-column="35" selection-end-line="79" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#625#626#0" expanded="true" />
-            <element signature="e#714#715#0" expanded="true" />
-            <element signature="e#1165#1166#0" expanded="true" />
-            <element signature="e#1221#1222#0" expanded="true" />
-            <element signature="e#2109#2110#0" expanded="true" />
-            <element signature="e#2136#2137#0" expanded="true" />
-            <element signature="e#2325#2326#0" expanded="true" />
-            <element signature="e#2352#2353#0" expanded="true" />
-            <element signature="e#2545#2546#0" expanded="true" />
-            <element signature="e#2572#2573#0" expanded="true" />
+            <element signature="e#688#689#0" expanded="true" />
+            <element signature="e#777#778#0" expanded="true" />
+            <element signature="e#1228#1229#0" expanded="true" />
+            <element signature="e#1284#1285#0" expanded="true" />
+            <element signature="e#2868#2869#0" expanded="true" />
+            <element signature="e#2895#2896#0" expanded="true" />
           </folding>
         </state>
       </provider>

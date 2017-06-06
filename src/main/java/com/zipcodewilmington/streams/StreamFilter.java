@@ -1,6 +1,7 @@
 package com.zipcodewilmington.streams;
 
 import com.zipcodewilmington.streams.anthropoid.Person;
+import com.zipcodewilmington.streams.anthropoid.PersonFactory;
 import com.zipcodewilmington.streams.tools.RandomUtils;
 import com.zipcodewilmington.streams.tools.StringUtils;
 import static com.zipcodewilmington.streams.anthropoid.PersonFactory.*;
@@ -58,8 +59,11 @@ public class StreamFilter {
      * @return a list of person object whose name starts with `this.startingCharacter`
      */ //TODO
     public List<Person> toListMultiLine() {
-        return personStream.filter(p -> p.getName().startsWith(startingCharacter.toString()))
-                .collect(Collectors.toList());
+        return personStream.filter(p -> {
+            if(p.getName().startsWith(startingCharacter)){
+                return true;
+            } else return false;
+        }).collect(Collectors.toList());
     }
 
 
@@ -68,7 +72,7 @@ public class StreamFilter {
      * @return a list of person objects whose name starts with `this.startingCharacter`
      */ //TODO
     public List<Person> toListOneLine() {
-        return null;
+        return personStream.filter(p -> p.getName().startsWith(startingCharacter)).collect(Collectors.toList());
     }
 
 
@@ -77,7 +81,7 @@ public class StreamFilter {
      * @return an array of person object whose name starts with `this.startingCharacter`
      */ //TODO
     public Person[] toArrayOneLine() {
-        return null;
+        return personStream.filter(p -> p.getName().startsWith(startingCharacter)).toArray(PersonFactory::createPersonArray);
     }
 
 
