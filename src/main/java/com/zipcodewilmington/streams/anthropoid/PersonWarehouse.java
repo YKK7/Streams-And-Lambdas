@@ -7,9 +7,11 @@ import com.zipcodewilmington.streams.tools.logging.LoggerWarehouse;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -35,7 +37,7 @@ public final class PersonWarehouse {
 
     /**
      * @return list of uniquely named Person objects
-     */ //TODO
+     */
     public static Stream<Person> getUniquelyNamedPeople() {
         return people.stream().filter(distinctByKey(p -> p.getName()));
     }
@@ -50,7 +52,7 @@ public final class PersonWarehouse {
     /**
      * @param character starting character of Person objects' name
      * @return a Stream of respective
-     */ //TODO
+     */
     public static Stream<Person> getUniquelyNamedPeopleStartingWith(Character character) {
         return getUniquelyNamedPeople().filter(p -> p.getName().charAt(0) == character);
     }
@@ -58,22 +60,22 @@ public final class PersonWarehouse {
     /**
      * @param n first `n` Person objects
      * @return a Stream of respective
-     */ //TODO
+     */
     public static Stream<Person> getFirstNUniquelyNamedPeople(int n) {
-        return null;
+        return getUniquelyNamedPeople().limit(n);
     }
 
     /**
      * @return a mapping of Person Id to the respective Person name
-     */ // TODO
+     */
     public static Map<Long, String> getIdToNameMap() {
-        return null;
+        return people.stream().collect(Collectors.toMap(Person::getPersonalId, Person::getName));
     }
 
 
     /**
      * @return Stream of Stream of Aliases
-     */ // TODO
+     */ // TODO - no tests yet
     public static Stream<Stream<String>> getNestedAliases() {
         return null;
     }
@@ -81,7 +83,7 @@ public final class PersonWarehouse {
 
     /**
      * @return Stream of all Aliases
-     */ // TODO
+     */ // TODO - no tests yet
     public static Stream<String> getAllAliases() {
         return null;
     }
@@ -90,7 +92,7 @@ public final class PersonWarehouse {
      * @return list of names of Person objects
      */ // TODO
     public static List<String> getNames() {
-        return null;
+        return people.stream().map(Person::getName).collect(Collectors.toList());
     }
 
     /**

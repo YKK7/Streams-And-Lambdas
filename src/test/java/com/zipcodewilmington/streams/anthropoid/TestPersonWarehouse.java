@@ -8,6 +8,7 @@ import org.junit.Test;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import static com.zipcodewilmington.streams.anthropoid.PersonWarehouse.*;
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -18,26 +19,26 @@ public class TestPersonWarehouse {
 
     @Before
     public void setup() {
-        PersonWarehouse.getPeople().clear();
+        getPeople().clear();
         PersonFactory.createPersonStream(999);
     }
 
     @Test
     public void testAddPerson() {
-        int startSize = PersonWarehouse.getPeople().size();
+        int startSize = getPeople().size();
         int expectedEndSize = startSize + 1;
         PersonFactory.createRandomPerson();
 
-        int actualEndSize = PersonWarehouse.getPeople().size();
+        int actualEndSize = getPeople().size();
 
         assertEquals(expectedEndSize, actualEndSize);
     }
 
     @Test
     public void testGetUniquelyNamedPeople() {
-        List<Person> uniquelyNamedPeople = PersonWarehouse.getUniquelyNamedPeople().collect(Collectors.toList());
+        List<Person> uniquelyNamedPeople = getUniquelyNamedPeople().collect(Collectors.toList());
         List<String> uniqueNames = new ArrayList<>();
-        for (Person person : PersonWarehouse.getPeople()) {
+        for (Person person : getPeople()) {
             String personName = person.getName();
             boolean isUnique = !uniqueNames.contains(personName);
             if (isUnique) {
@@ -51,13 +52,13 @@ public class TestPersonWarehouse {
     @Test
     public void slightlyBetterGetUniquelyNamedPeopleTest(){
         //Given
-        PersonWarehouse.addPerson(new Person("Leon", 24, true, 123, new Date()));
-        PersonWarehouse.addPerson(new Person("Leon", 42, false, 456, new Date()));
+        addPerson(new Person("Leon", 24, true, 123, new Date()));
+        addPerson(new Person("Leon", 42, false, 456, new Date()));
 
         //When
-        List<Person> uniquelyNamedPeople = PersonWarehouse.getUniquelyNamedPeople().collect(Collectors.toList());
+        List<Person> uniquelyNamedPeople = getUniquelyNamedPeople().collect(Collectors.toList());
         List<String> uniqueNames = new ArrayList<>();
-        for (Person person : PersonWarehouse.getPeople()) {
+        for (Person person : getPeople()) {
             String personName = person.getName();
             boolean isUnique = !uniqueNames.contains(personName);
             if (isUnique) {
@@ -72,14 +73,14 @@ public class TestPersonWarehouse {
     @Test
     public void testGetFirstNUniquelyNamedPeople() {
         int expectedSize = RandomUtils.createInteger(1, 3);
-        int actualSize = (int)PersonWarehouse.getFirstNUniquelyNamedPeople(expectedSize).count();
+        int actualSize = (int) getFirstNUniquelyNamedPeople(expectedSize).count();
         Assert.assertTrue(expectedSize > actualSize);
     }
 
     @Test
     public void testGetUniquelyNamedPeopleStartingWith() {
         Character startingCharacter = RandomUtils.createCharacter('A', 'Z');
-        List<Person> people = PersonWarehouse.getUniquelyNamedPeopleStartingWith(startingCharacter).collect(Collectors.toList());
+        List<Person> people = getUniquelyNamedPeopleStartingWith(startingCharacter).collect(Collectors.toList());
         for (Person person : people) {
             String personName = person.getName();
             Assert.assertTrue(personName.startsWith(startingCharacter.toString()));
@@ -88,9 +89,9 @@ public class TestPersonWarehouse {
 
     @Test
     public void testGetIdToNameMap() {
-        Map<Long, String> warehouseNameMap = PersonWarehouse.getIdToNameMap();
+        Map<Long, String> warehouseNameMap = getIdToNameMap();
         Map<Long, String> localNameMap = new HashMap<>();
-        for (Person person : PersonWarehouse.getPeople()) {
+        for (Person person : getPeople()) {
             long id = person.getPersonalId();
             String name = person.getName();
             localNameMap.put(id, name);
@@ -110,9 +111,9 @@ public class TestPersonWarehouse {
 
     @Test
     public void testGetNames() {
-        List<String> warehouseNames = PersonWarehouse.getNames();
+        List<String> warehouseNames = getNames();
         ArrayList<String> localNames = new ArrayList<>();
-        for (Person person : PersonWarehouse.getPeople()) {
+        for (Person person : getPeople()) {
             localNames.add(person.getName());
         }
         assertEquals(localNames.size(), warehouseNames.size());
